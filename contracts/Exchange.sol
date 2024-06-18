@@ -63,10 +63,14 @@ contract Exchange is ERC20 {
      * @return returns the amount of ETH and Token to be returned to the user when removeLiquidity is called.
      * @notice only called just after removeLiquidity, if it is successful.
      */
-    function getEthAndTokenToReturn() public view returns (uint256, uint256) {}
+    function getEthAndTokenToReturn() public view returns (uint256, uint256) {
+        // calculate
+    }
 
     /**
      * @dev getReserve returns the balanace of 'token' held by this contract
      */
-    function getReserve() public view returns (uint256) {}
+    function getReserve() public view returns (uint256) {
+        return token.balanceOf(address(this));
+    }
 }
